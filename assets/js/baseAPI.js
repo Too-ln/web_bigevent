@@ -1,3 +1,3 @@
 $.ajaxPrefilter(function(option){
-    options.url='http://www.liulongbin.top:3007'+options.url
+    option.url='http://www.liulongbin.top:3007'+option.url
 })
