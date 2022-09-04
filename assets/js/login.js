@@ -31,7 +31,7 @@ $(function(){
         e.preventDefault();
         const username= $('.reg-box [name=username]').val().trim()
         const password=$('.reg-box [name=password]').val()
-        $.post('http://www.liulongbin.top:3007/api/reguser',{username:username,password:password},function(res){
+        $.post('/api/reguser',{username:username,password:password},function(res){
             if(res.status !==0) return layer.msg(res.message);
             layer.msg('注册成功，请登录！');
             $('#link_login').click()
@@ -42,7 +42,7 @@ $(function(){
         e.preventDefault();
         $.ajax({
             type:'post',
-            url:"http://www.liulongbin.top:3007/api/login",
+            url:"/api/login",
             data:$(this).serialize(),
             success:function(res){
                 if(res.status !==0) return layer.msg(res.message);
