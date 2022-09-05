@@ -1,5 +1,5 @@
 $.ajaxPrefilter(function(option){
-    option.url='http://www.liulongbin.top:3007'+option.url
+    option.url='http://api-breakingnews-web.itheima.net'+option.url
     if(option.url.indexOf('/my/')!==-1){
         option.headers={Authorization:localStorage.getItem('token') || ''}
     }
