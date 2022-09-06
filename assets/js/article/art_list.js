@@ -92,6 +92,7 @@ $(function(){
           });        
       }
     $('tbody').on('click','.btn-del',function(){
+        let len = $(this).length
         let id=$(this).data('id')
         layer.confirm('确认删除?', {icon: 3, title:'提示'}, function(index){
             //do something
@@ -101,6 +102,9 @@ $(function(){
                 success:function(res){
                     if(res.status!==0) return layer.msg('删除文章失败！')
                     layer.msg('删除文章成功！')
+                    if(len === 1){
+                        q.pagenum=q.pagenum===1?1:q.pagenum-1
+                    }
                     initTable()
                     layer.close(index);
                 }
