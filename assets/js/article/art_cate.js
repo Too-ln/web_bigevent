@@ -84,7 +84,7 @@ $(function(){
                     if(res.status!==0) return layer.msg('删除分类失败!')
                     layer.msg('删除分类成功!')
                     layer.close(index);
-
+                    initAtrCateList()
                 }
             })
           });
